@@ -3,23 +3,24 @@ package com.company;
 import java.util.ArrayList;
 
 public class DataBase {
-    private ArrayList<Client> clients;
+    private ArrayList<User> users;
+    private ArrayList<Item> items;
     public DataBase (){
-        this.clients = new ArrayList<>();
+        this.users = new ArrayList<>();
     }
-    public ArrayList<Client> getClients() {
-        return clients;
+    public ArrayList<User> getUsers() {
+        return users;
     }
 
-    public void setClients(ArrayList<Client> clients) {
-        this.clients = clients;
+    public void setClients(ArrayList<User> clients) {
+        this.users = clients;
     }
-    public void SignUp(Client client){
-        this.clients.add(client);
+    public void SignUp(User user){
+        this.users.add(user);
     }
     public void printUsers(){
         int i = 1;
-        for (Client x : clients){
+        for (User x : users){
             System.out.println(
                     "Client "+(i++) + "   Username: "+ x.getAccount().getUsername()
                     + "   Password: "+ x.getAccount().getPassword()
