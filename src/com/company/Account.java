@@ -49,5 +49,12 @@ public class Account {
         }
     }
 
-    public void PayMoney()
+    public void PayMoney(double amount){
+        if(this.VerifyAccount()){
+            this.setCash(this.getCash()-amount);
+        }
+        else {
+            System.out.println("Incorrect data");
+        }
+    }
 }
