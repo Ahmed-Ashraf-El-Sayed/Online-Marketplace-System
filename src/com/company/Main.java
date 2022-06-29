@@ -19,7 +19,7 @@ public class Main {
         }catch (Exception e){
             e.printStackTrace();
         }*/
-        trialDatabase trial = new trialDatabase();
+        Trial trial = new Trial();
         trial.trialFunction();
 
         Scanner scanner = new Scanner(System.in);
