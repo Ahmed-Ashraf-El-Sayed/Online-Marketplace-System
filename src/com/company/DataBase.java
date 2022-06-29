@@ -16,7 +16,21 @@ public class DataBase {
         this.users = clients;
     }
     public void SignUp(User user){
+        if (!CheckUserName(user.getAccount().getUsername())){
+            System.out.println("This username is taken");
+            return;
+        }
         this.users.add(user);
+        System.out.println("Account Created");
+    }
+
+    public boolean CheckUserName(String username){
+        for (User user : users){
+            if (user.getAccount().getUsername().equals(username)){
+                return false;
+            }
+        }
+        return true;
     }
     public void printUsers(){
         int i = 1;

@@ -12,4 +12,7 @@ public class Client extends User{
     public void RemoveItemFromCart(Item item){
         this.cart.RemoveItem(item);
     }
+    public void ChargeAccount(){
+
+    }
 }
