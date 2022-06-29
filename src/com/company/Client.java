@@ -1,29 +1,15 @@
 package com.company;
 
-public class Client {
-    private Account account;
-    public Client(Account account){
-        this.account = account;
+public class Client extends User{
+    private Cart cart;
+    public Client(Account account) {
+        super(account);
+        this.cart = new Cart();
     }
-    public void SignIn (String username, String password){
-        if (this.account.VerifyAccount(username, password)){
-            System.out.println("Sign in completed");
-        }
+    public void AddItemToCart(Item item){
+        this.cart.AddItem(item);
     }
-    public void ChangeUserName(String newUsername){
-        String username = null,password = null; // to be entered from user.
-        if (this.account.VerifyAccount(username,password)){
-            this.account.setUsername(newUsername);
-        }
-    }
-    public void ChangePassword(String newPassword){
-        String username = null,password = null; // to be entered from user.
-        if (this.account.VerifyAccount(username,password)){
-            this.account.setPassword(newPassword);
-        }
-    }
-
-    public Account getAccount() {
-        return account;
+    public void RemoveItemFromCart(Item item){
+        this.cart.RemoveItem(item);
     }
 }

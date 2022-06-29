@@ -28,7 +28,7 @@ public class Main {
         String username = scanner.nextLine();
         String password = scanner.nextLine();
         Account account = new Account(username,password);
-        Client client = new Client(account);
+        User client = new User(account);
         dataBase.SignUp(client);
         dataBase.printUsers();
     }
