@@ -5,20 +5,18 @@ public class User {
     public User(Account account){
         this.account = account;
     }
-    public void SignIn (String username, String password){
-        if (this.account.VerifyAccount(username, password)){
+    public void SignIn (){
+        if (this.account.VerifyAccount()){
             System.out.println("Sign in completed");
         }
     }
     public void ChangeUserName(String newUsername){
-        String username = null,password = null; // to be entered from user.
-        if (this.account.VerifyAccount(username,password)){
+        if (this.account.VerifyAccount()){
             this.account.setUsername(newUsername);
         }
     }
     public void ChangePassword(String newPassword){
-        String username = null,password = null; // to be entered from user.
-        if (this.account.VerifyAccount(username,password)){
+        if (this.account.VerifyAccount()){
             this.account.setPassword(newPassword);
         }
     }
