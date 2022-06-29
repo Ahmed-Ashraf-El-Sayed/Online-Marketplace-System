@@ -7,9 +7,14 @@ public class DataBase {
     private ArrayList<Item> items;
     public DataBase (){
         this.users = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
     public ArrayList<User> getUsers() {
         return users;
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
     }
 
     public void setClients(ArrayList<User> clients) {
