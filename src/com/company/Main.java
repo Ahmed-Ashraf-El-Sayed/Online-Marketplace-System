@@ -18,8 +18,12 @@ public class Main {
         String username = scanner.nextLine();
         String password = scanner.nextLine();
         Account account = new Account(username,password);
+        account.VerifyAccount();
+        System.out.println("current balance is "+account.getCash());
         User client = new User(account);
+        /*
         dataBase.SignUp(client);
         dataBase.printUsers();
+         */
     }
 }
