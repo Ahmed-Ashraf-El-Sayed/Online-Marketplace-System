@@ -1,5 +1,9 @@
 package com.company;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -7,16 +11,18 @@ public class DataBase {
     private ArrayList<User> users;
     private ArrayList<Item> items;
     private static DataBase dataBase;
-    private DataBase (){
+
+    private DataBase() {
         this.users = new ArrayList<>();
         this.items = new ArrayList<>();
     }
 
-    public static DataBase getInstance(){
+    public static DataBase getInstance() {
         return Objects.requireNonNullElseGet(dataBase, DataBase::new);
     }
 
     public ArrayList<User> getUsers() {
+
         return users;
     }
 
@@ -29,8 +35,8 @@ public class DataBase {
     }
 
 
-    public void SignUp(User user){
-        if (!CheckUserName(user.getAccount().getUsername())){
+    public void SignUp(User user) {
+        if (!CheckUserName(user.getAccount().getUsername())) {
             System.out.println("This username is taken");
             return;
         }
@@ -41,9 +47,9 @@ public class DataBase {
     }
 
 
-    public boolean CheckUserName(String username){
-        for (User user : users){
-            if (user.getAccount().getUsername().equals(username)){
+    public boolean CheckUserName(String username) {
+        for (User user : users) {
+            if (user.getAccount().getUsername().equals(username)) {
                 return false;
             }
         }
@@ -51,13 +57,35 @@ public class DataBase {
     }
 
 
-    public void printUsers(){
+    public void printUsers() {
         int i = 1;
-        for (User x : users){
+        for (User x : users) {
             System.out.println(
-                    "Client "+(i++) + "   Username: "+ x.getAccount().getUsername()
-                    + "   Password: "+ x.getAccount().getPassword()
+                    "Client " + (i++) + "   Username: " + x.getAccount().getUsername()
+                            + "   Password: " + x.getAccount().getPassword()
             );
+        }
+    }
+
+
+//fetch items from database into arraylist
+
+    public void objectify() {
+        try {
+            String query = "select Item_name,Price,Quantitiy,Weight from Item ";
+            // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                Item item = new Item(
+                        rs.getString("Item_name"),
+                        rs.getString("Quantitiy")+" - "+rs.getString("Weight"),
+                        rs.getDouble("price"));
+                items.add(item);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
