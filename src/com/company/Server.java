@@ -6,6 +6,7 @@ public class Server {
 
     private Server(){
         this.dataBase=DataBase.getInstance();
+        dataBase.objectify();
     }
 
     public static Server getInstance(){
