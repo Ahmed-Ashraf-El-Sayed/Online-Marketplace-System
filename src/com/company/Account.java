@@ -108,9 +108,6 @@ public class Account {
         if(this.VerifyAccount()){
             this.setCash(this.getCash()+amount);
         }
-
-<<<<<<< HEAD
-
         //this sets the balance of the account or user
         /*String update = "update person set balance = balance +"+amount+"where username = username";
         try {
@@ -121,8 +118,7 @@ public class Account {
         }catch (Exception e){
             e.printStackTrace();
         }*/
->>>>>>> JdbcImplementation
-        
+
         else {
             System.out.println("Incorrect data");
         }
