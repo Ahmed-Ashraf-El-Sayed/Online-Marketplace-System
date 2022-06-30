@@ -108,36 +108,17 @@ public class Account {
         if(this.VerifyAccount()){
             this.setCash(this.getCash()+amount);
         }
-        //this sets the balance of the account or user
-        /*String update = "update person set balance = balance +"+amount+"where username = username";
-        try {
-            // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
-            Statement statement = connection.createStatement();
-            statement.executeUpdate(update);
-        }catch (Exception e){
-            e.printStackTrace();
-        }*/
         else {
             System.out.println("Incorrect data");
         }
     }
     public void PayMoney(double amount){
-        String update = "update person set balance = balance -"+amount+"where username = username";
-        try {
-            // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
-            Statement statement = connection.createStatement();
-            statement.executeUpdate(update);
-        }catch (Exception e) {
-            e.printStackTrace();
 
-        /*if(this.VerifyAccount()){
+        if(this.VerifyAccount()){
             this.setCash(this.getCash()-amount);
         }
         else {
             System.out.println("Incorrect data");
-        }*/
         }
     }
 
