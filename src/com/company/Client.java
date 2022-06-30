@@ -12,4 +12,24 @@ public class Client extends User{
     public void RemoveItemFromCart(Item item){
         this.cart.RemoveItem(item);
     }
+
+    // Should request from server throughout these methods
+
+    public void ChargeAccount(){
+
+    }
+
+    public void Pay(){
+
+    }
+
+    public void RequestUsernameChange(){
+
+    }
+
+    public void RequestPasswordChange(){
+
+    }
+
+
 }
