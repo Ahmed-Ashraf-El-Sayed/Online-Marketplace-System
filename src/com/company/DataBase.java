@@ -70,7 +70,7 @@ public class DataBase {
 
 //fetch items from database into arraylist
 
-    public void objectify() {
+    public void objectifyItems() {
         try {
             String query = "select Item_name,Price,Quantitiy,Weight from Item ";
             // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
@@ -83,6 +83,21 @@ public class DataBase {
                         rs.getString("Quantitiy")+" - "+rs.getString("Weight"),
                         rs.getDouble("price"));
                 items.add(item);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void objectifyUsers(){
+        try {
+            String query = "select customer_username,customer_password from customer ";
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                Account account = new Account(rs.getString("username"),rs.getString("password"));
+                User user = new User(account);
+                users.add(user);
             }
         }catch (Exception e){
             e.printStackTrace();
