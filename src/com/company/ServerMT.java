@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class ServerMT {
 
-    static ArrayList<String> msgs;
+    static ArrayList<String> msgs = new ArrayList<>();
     private Server serverMsg;
 
     ServerMT() throws IOException, InterruptedException {
@@ -29,8 +29,9 @@ public class ServerMT {
 
 
         while(true){
-            msgs = clientHandler1.getMessages();
+            //msgs = clientHandler1.getMessages();
             if(!msgs.isEmpty()){
+                System.out.println("Not Empty");
                 synchronized (msgs){
                     //for(int i =0 ; i<msgs.size() ; i++){
                         System.out.println("Request from client #1 stating: " + msgs);
