@@ -19,10 +19,6 @@ public class ClientMT {
             if(str.equalsIgnoreCase("exit")){
                 break;
             }
-            if(str.equals("charge")){
-                otherWrite.writeUTF("flosy fen");
-                continue;
-            }
             otherWrite.writeUTF(str);
 
         }

@@ -25,7 +25,7 @@ public class Client extends User{
 
     public void ChargeAccount(){
 
-        ClientHandler.manualWrite("7ot flos");
+       // ClientHandler.manualWrite("7ot flos");
 
     }
 
