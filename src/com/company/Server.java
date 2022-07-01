@@ -1,21 +1,17 @@
 package com.company;
 
+import java.io.IOException;
+
 public class Server {
-    private DataBase dataBase;
-    private static Server server;
+    //private final DataBase dataBase;
+    private Server server;
 
-    private Server(){
-        this.dataBase=DataBase.getInstance();
+    public Server(){
+        /*this.dataBase=DataBase.getInstance();
         dataBase.objectifyItems();
-        dataBase.objectifyUsers();
+        dataBase.objectifyUsers();*/
     }
 
-    public static Server getInstance(){
-        if (server == null){
-            return new Server();
-        }
-        return server;
-    }
 
     public void ReplyUsernameChange(User user,String username){
         if(user.getAccount().VerifyAccount()){
@@ -38,18 +34,15 @@ public class Server {
     }
 
     public void ReplySignUp(User user){
-        dataBase.SignUp(user);
+        //dataBase.SignUp(user);
     }
 
     public boolean ReplySignIn(User user){
         return user.getAccount().VerifyAccount();
-
-        // if true should go to next state
-
     }
 
     public void ReplyAll(String request){
-
+        System.out.println("Galy request "+request);
     }
 }
 

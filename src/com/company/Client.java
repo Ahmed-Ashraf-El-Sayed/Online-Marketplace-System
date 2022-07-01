@@ -1,10 +1,17 @@
 package com.company;
 
+import java.io.IOException;
+
 public class Client extends User{
     private Cart cart;
-    public Client(Account account) {
+
+    private ClientMT clientMT;
+    private ClientHandler clientHandler;
+
+    public Client(Account account) throws IOException {
         super(account);
         this.cart = new Cart();
+        clientMT = new ClientMT();
     }
     public void AddItemToCart(Item item){
         this.cart.AddItem(item);
@@ -16,7 +23,7 @@ public class Client extends User{
     // Should request from server throughout these methods
 
     public void ChargeAccount(){
-
+        // client sends string msg to server
     }
 
     public void Pay(){
