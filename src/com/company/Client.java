@@ -11,7 +11,7 @@ public class Client extends User{
     public Client(Account account) throws IOException {
         super(account);
         this.cart = new Cart();
-        clientMT = new ClientMT();
+        //clientMT = new ClientMT();
     }
     public void AddItemToCart(Item item){
         this.cart.AddItem(item);

@@ -9,7 +9,8 @@ public class ClientHandler extends Thread {
     Socket client;
     DataInputStream input;
     DataOutputStream output;
-       static ArrayList<String> receivedMessages = new ArrayList<>();
+    static ArrayList<String> receivedMessages = new ArrayList<>();
+
     ClientHandler(Socket clientSocket) throws IOException {
         client = clientSocket;
         input = new DataInputStream(client.getInputStream());
@@ -21,10 +22,10 @@ public class ClientHandler extends Thread {
     @Override
     public void run() {
         String str;
-        while(true){
+        while (true) {
             try {
                 str = input.readUTF();
-                synchronized (receivedMessages){
+                synchronized (receivedMessages) {
                     receivedMessages.add(str);
 
                 }
@@ -38,11 +39,14 @@ public class ClientHandler extends Thread {
 
 
     }
+
     public void sendMsg(String str) throws IOException {
         output.writeUTF(str);
     }
-    public ArrayList<String> getMessages(){
+
+    public ArrayList<String> getMessages() {
         return receivedMessages;
     }
+}
 
 
