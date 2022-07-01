@@ -1,17 +1,18 @@
 package com.company;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Client extends User{
     private Cart cart;
 
-    private ClientMT clientMT;
-    private ClientHandler clientHandler;
+    //private ClientMT clientMT;
+    //private ClientHandler clientHandler;
 
     public Client(Account account) throws IOException {
         super(account);
         this.cart = new Cart();
-        clientMT = new ClientMT();
+        //clientMT = new ClientMT();
     }
     public void AddItemToCart(Item item){
         this.cart.AddItem(item);
@@ -23,15 +24,14 @@ public class Client extends User{
 
     // Should request from server throughout these methods
 
-    public void ChargeAccount(){
+    public String ChargeAccount(){
 
-        ServerMT.msgs.add("7ot flos");
-        System.out.println(ServerMT.msgs);
+        return "7ot flos";
 
     }
 
-    public void Pay(){
-
+    public String Pay(){
+        return "edfa3";
     }
 
     public void RequestUsernameChange(){
@@ -40,6 +40,17 @@ public class Client extends User{
 
     public void RequestPasswordChange(){
 
+    }
+    public String TakeInputs(){
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine();
+        if (s.equals("charge")){
+            return ChargeAccount();
+        }
+        else if (s.equals("pay")){
+            return Pay();
+        }
+        return "Emshy yala";
     }
 
 

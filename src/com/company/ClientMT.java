@@ -7,9 +7,14 @@ import java.util.*;
 
 public class ClientMT {
     boolean isOn;
+    Client client;
 
     public ClientMT() throws IOException, IOException {
         isOn = true;
+
+        //client = new Client(new Account("3askary","3askary"));
+
+
         InetAddress ip = InetAddress.getLocalHost();
         Socket other = new Socket(ip , 22000);
         DataInputStream otherRead = new DataInputStream(other.getInputStream());

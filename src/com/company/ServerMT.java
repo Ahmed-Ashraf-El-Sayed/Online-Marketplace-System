@@ -29,19 +29,16 @@ public class ServerMT {
 
 
         while(true){
-
+            msgs = clientHandler1.getMessages();
             if(!msgs.isEmpty()){
-                System.out.println("Not Empty");
-
-
-                msgs = clientHandler1.getMessages();
-
-                System.out.println("Not Empty");
                 synchronized (msgs){
                     //for(int i =0 ; i<msgs.size() ; i++){
                         System.out.println("Request from client #1 stating: " + msgs);
                         String s = msgs.get(msgs.size()-1);
-                        serverMsg.ReplyAll(s);
+                        //serverMsg.ReplyAll(s);
+                    if (s.equals("print")){
+                        serverMsg.dataBase.printItems();
+                    }
                     //}
                     msgs.clear();
                 }
