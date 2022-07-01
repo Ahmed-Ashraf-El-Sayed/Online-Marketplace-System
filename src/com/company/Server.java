@@ -47,6 +47,10 @@ public class Server {
         // if true should go to next state
 
     }
+
+    public void ReplyAll(String request){
+
+    }
 }
 
 
