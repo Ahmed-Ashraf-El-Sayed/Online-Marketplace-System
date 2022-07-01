@@ -19,10 +19,7 @@ public class ClientMT {
             if(str.equalsIgnoreCase("exit")){
                 break;
             }
-            if(str.equals("Sign in")){
-                otherWrite.writeUTF("Enter your login info");
-                continue;
-            }
+
             otherWrite.writeUTF(str);
 
         }
