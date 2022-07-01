@@ -9,7 +9,7 @@ public class ClientNew
     private DataInputStream input = null;
     private DataOutputStream out	 = null;
     //ClientTrial clientTrial;
-    public Client client;
+    public static Client client;
     String line = "";
     
     // constructor to put ip address and port
@@ -19,7 +19,7 @@ public class ClientNew
         // establish a connection
         try
         {
-            client = new Client(new Account("abdo","abdo"));
+            client = new Client(new Account(" "," "));
             socket = new Socket(address, port);
             System.out.println("Connected");
 
@@ -68,7 +68,9 @@ public class ClientNew
         }
     }
 
-
+    public static void getClient() {
+        System.out.println(client.getAccount().getUsername());
+    }
 
     /*
     public static void main(String args[])

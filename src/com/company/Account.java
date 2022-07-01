@@ -6,16 +6,24 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Objects;
 import java.sql.*;
+import java.util.Scanner;
 
 
 public class Account {
     private String username;
     private String password;
     private double cash;
+    public Account(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter username pass");
+        this.username = scanner.nextLine();
+        this.password = scanner.nextLine();
+        this.cash = 0;
+    }
     public Account(String username, String password){
         this.username = username;
         this.password = password;
-        this.cash = 0;
+        this.cash=0;
     }
     public boolean VerifyAccount(){
         try {

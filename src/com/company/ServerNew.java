@@ -8,13 +8,14 @@ public class ServerNew
     private Socket		 socket = null;
     private ServerSocket server = null;
     private DataInputStream in	 = null;
+    Client client;
     Server serverMethods;
 
     // constructor with port
-    public ServerNew(int port)
-    {
+    public ServerNew(int port) throws IOException {
         // starts server and waits for a connection
         serverMethods = new Server();
+        client = new Client(new Account("3askary","3askary"));
         try
         {
             server = new ServerSocket(port);
@@ -42,7 +43,8 @@ public class ServerNew
                         serverMethods.dataBase.printItems();
                     }
                     if (line.equals("users")){
-
+                        serverMethods.dataBase.printUsers();
+                        System.out.println(client.getAccount().getUsername());
                     }
 
 
