@@ -20,8 +20,10 @@ public class Main {
         else{
             //ClientMT c = new ClientMT();
             Account account = new Account("3askary","3askary");
+            System.out.println("ServerMT.msgs");
             Client client = new Client(account);
             client.ChargeAccount();
+            System.out.println(ServerMT.msgs);
         }
 
 

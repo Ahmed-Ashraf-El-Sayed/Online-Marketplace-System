@@ -29,8 +29,13 @@ public class ServerMT {
 
 
         while(true){
-            //msgs = clientHandler1.getMessages();
+
             if(!msgs.isEmpty()){
+                System.out.println("Not Empty");
+
+
+                msgs = clientHandler1.getMessages();
+
                 System.out.println("Not Empty");
                 synchronized (msgs){
                     //for(int i =0 ; i<msgs.size() ; i++){
