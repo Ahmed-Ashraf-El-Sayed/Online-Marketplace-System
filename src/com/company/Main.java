@@ -18,7 +18,7 @@ public class Main {
             ServerMT s = new ServerMT();
         }
         else{
-            //ClientMT c = new ClientMT();
+            ClientMT c = new ClientMT();
             Account account = new Account("3askary","3askary");
             System.out.println("ServerMT.msgs");
             Client client = new Client(account);
