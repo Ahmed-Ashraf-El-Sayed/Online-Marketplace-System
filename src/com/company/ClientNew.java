@@ -70,8 +70,10 @@ public class ClientNew
 
 
 
+    /*
     public static void main(String args[])
     {
         ClientNew client = new ClientNew("127.0.0.1", 5000);
     }
+    */
 }

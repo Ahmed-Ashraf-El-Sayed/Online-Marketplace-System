@@ -37,7 +37,9 @@ public class ServerNew
                 try
                 {
                     line = in.readUTF();
-                    System.out.println(line);
+                    System.out.println(serverMethods.ReplyAll(line));
+                    
+
 
                 }
                 catch(IOException i)
@@ -57,8 +59,9 @@ public class ServerNew
         }
     }
 
-    public static void main(String args[])
+    /*public static void main(String args[])
     {
         ServerNew server = new ServerNew(5000);
-    }
+    }*/
+
 }

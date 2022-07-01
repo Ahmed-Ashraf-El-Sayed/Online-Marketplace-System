@@ -50,6 +50,9 @@ public class Client extends User{
         else if (s.equals("pay")){
             return Pay();
         }
+        else if (s.equals("username")){
+            return "username";
+        }
         return "Emshy yala";
     }
 

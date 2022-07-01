@@ -15,15 +15,17 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         if(scan.next().equals("server")){
-            ServerMT s = new ServerMT();
+            //ServerMT s = new ServerMT();
+            ServerNew server = new ServerNew(5000);
         }
         else{
             //ClientMT c = new ClientMT();
-            Account account = new Account("3askary","3askary");
+            /*Account account = new Account("3askary","3askary");
             System.out.println("kekw1");
             Client client = new Client(account);
             System.out.println("kekw2");
-            client.ChargeAccount();
+            client.ChargeAccount();*/
+            ClientNew client = new ClientNew("127.0.0.1", 5000);
 
         }
 

@@ -5,13 +5,12 @@ import java.io.IOException;
 public class Server {
     public final DataBase dataBase;
     private Server server;
+    Client client;
 
     public Server(){
         this.dataBase=DataBase.getInstance();
         dataBase.objectifyItems();
         dataBase.objectifyUsers();
-        //dataBase.printUsers();
-        //dataBase.printItems();
     }
 
 
@@ -43,8 +42,8 @@ public class Server {
         return user.getAccount().VerifyAccount();
     }
 
-    public void ReplyAll(String request){
-        System.out.println("Galy request "+request);
+    public String ReplyAll(String request){
+        return "Galy request "+request;
     }
 }
 
