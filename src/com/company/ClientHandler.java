@@ -24,8 +24,11 @@ public class ClientHandler extends Thread {
         while(true){
             try {
                 str = input.readUTF();
-
+                synchronized (receivedMessages){
                     receivedMessages.add(str);
+
+                }
+
 
 
             } catch (IOException e) {
