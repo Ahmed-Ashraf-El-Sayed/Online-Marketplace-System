@@ -17,7 +17,7 @@
          <children>
             <AnchorPane layoutX="531.0" prefHeight="600.0" prefWidth="668.0" style="-fx-background-color: white;">
                <children>
-                  <Button layoutX="273.0" layoutY="464.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="122.0" text="Login" textFill="#ff6600">
+                  <Button layoutX="273.0" layoutY="464.0" mnemonicParsing="false" onAction="#gotomainwindow" prefHeight="45.0" prefWidth="122.0" text="Login" textFill="#ff6600">
                      <font>
                         <Font name="Century Gothic Bold" size="18.0" />
                      </font>
@@ -56,7 +56,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Label layoutX="44.0" layoutY="134.0" prefHeight="332.0" prefWidth="397.0" text="El 3asaker Supermarket " textFill="#fffefe">
+            <Label layoutX="44.0" layoutY="134.0" prefHeight="269.0" prefWidth="457.0" text="El 3asaker Supermarket " textFill="#fffefe">
                <font>
                   <Font name="Century Gothic Bold" size="27.0" />
                </font>
