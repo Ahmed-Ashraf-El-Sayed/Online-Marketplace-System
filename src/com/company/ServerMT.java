@@ -21,6 +21,7 @@ public class ServerMT {
         clientHandler1.start();
 
 
+
         /*clientSocket = server.accept();
         ClientHandler clientHandler2  = new ClientHandler(clientSocket);
         clientHandler2.start();*/
@@ -33,8 +34,7 @@ public class ServerMT {
                 synchronized (msgs){
                     for(int i =0 ; i<msgs.size() ; i++){
                         System.out.println("Request from client #1 stating: " + msgs);
-                        //String s = msgs.get(msgs.size()-1);
-                        //serverMsg.ReplyAll(s);
+                        Reply(msgs.get(msgs.size()-1));
                     }
                     msgs.clear();
                 }
@@ -52,6 +52,17 @@ public class ServerMT {
 
             }*/
             Thread.sleep(5);
+        }
+    }
+    public void Reply(String s){
+        if ("pay".equals(s)) {
+            System.out.println("Edfa3ly flos");
+        }
+        else if (s.equals("charge")){
+            System.out.println("esh7nly");
+        }
+        else if (s.equals("sign in")){
+            
         }
     }
 
