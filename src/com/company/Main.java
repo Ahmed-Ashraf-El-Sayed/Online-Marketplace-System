@@ -23,7 +23,6 @@ public class Main {
             System.out.println("ServerMT.msgs");
             Client client = new Client(account);
             client.ChargeAccount();
-            System.out.println(ServerMT.msgs);
         }
 
 

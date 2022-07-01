@@ -9,7 +9,7 @@ public class ClientHandler extends Thread {
     Socket client;
     DataInputStream input;
     DataOutputStream output;
-    ArrayList<String> receivedMessages = new ArrayList<>();
+       static ArrayList<String> receivedMessages = new ArrayList<>();
     ClientHandler(Socket clientSocket) throws IOException {
         client = clientSocket;
         input = new DataInputStream(client.getInputStream());
@@ -24,10 +24,10 @@ public class ClientHandler extends Thread {
         while(true){
             try {
                 str = input.readUTF();
-                synchronized (receivedMessages){
+
                     receivedMessages.add(str);
 
-                }
+
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -44,3 +44,4 @@ public class ClientHandler extends Thread {
         return receivedMessages;
     }
 }
+

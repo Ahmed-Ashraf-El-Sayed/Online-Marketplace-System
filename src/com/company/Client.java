@@ -25,8 +25,7 @@ public class Client extends User{
 
     public void ChargeAccount(){
 
-        ServerMT.msgs.add("7ot flos");
-        System.out.println(ServerMT.msgs);
+        ClientHandler.receivedMessages.add("7ot flos");
 
     }
 
