@@ -46,5 +46,8 @@ public class ClientHandler extends Thread {
     public ArrayList<String> getMessages(){
         return receivedMessages;
     }
+    public static void manualWrite(String str){
+        receivedMessages.add(str);
+    }
 }
 

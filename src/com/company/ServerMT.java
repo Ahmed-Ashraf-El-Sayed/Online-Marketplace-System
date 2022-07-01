@@ -15,9 +15,6 @@ public class ServerMT {
 
 
         serverMsg = new Server();
-
-
-
         ServerSocket server = new ServerSocket(22000);
         Socket clientSocket = server.accept();
         ClientHandler clientHandler1 = new ClientHandler(clientSocket);
@@ -33,17 +30,12 @@ public class ServerMT {
             msgs = clientHandler1.getMessages();
 
             if(!msgs.isEmpty()){
-                System.out.println("Not Empty");
-
-
-
-                System.out.println("Not Empty");
                 synchronized (msgs){
-                    //for(int i =0 ; i<msgs.size() ; i++){
+                    for(int i =0 ; i<msgs.size() ; i++){
                         System.out.println("Request from client #1 stating: " + msgs);
-                        String s = msgs.get(msgs.size()-1);
-                        serverMsg.ReplyAll(s);
-                    //}
+                        //String s = msgs.get(msgs.size()-1);
+                        //serverMsg.ReplyAll(s);
+                    }
                     msgs.clear();
                 }
 

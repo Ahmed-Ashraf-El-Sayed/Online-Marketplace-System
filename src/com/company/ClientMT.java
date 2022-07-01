@@ -16,10 +16,15 @@ public class ClientMT {
         String str = "";
         while(true){
             str = scan.nextLine();
-            otherWrite.writeUTF(str);
             if(str.equalsIgnoreCase("exit")){
                 break;
             }
+            if(str.equals("charge")){
+                otherWrite.writeUTF("flosy fen");
+                continue;
+            }
+            otherWrite.writeUTF(str);
+
         }
         otherRead.close();
         otherWrite.close();
