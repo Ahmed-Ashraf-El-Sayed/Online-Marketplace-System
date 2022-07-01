@@ -8,6 +8,7 @@ import java.util.Objects;
 public class ServerMT {
 
     static ArrayList<String> msgs;
+    private Server serverMsg;
 
     ServerMT() throws IOException, InterruptedException {
 
@@ -25,8 +26,6 @@ public class ServerMT {
         /*clientSocket = server.accept();
         ClientHandler clientHandler2  = new ClientHandler(clientSocket);
         clientHandler2.start();*/
-        clientHandler2.start();
-
 
 
         while(true){
