@@ -9,9 +9,9 @@ public class ClientNew
     private DataInputStream input = null;
     private DataOutputStream out	 = null;
     //ClientTrial clientTrial;
-    Client client;
+    public Client client;
     String line = "";
-
+    
     // constructor to put ip address and port
     public ClientNew(String address, int port)
     {

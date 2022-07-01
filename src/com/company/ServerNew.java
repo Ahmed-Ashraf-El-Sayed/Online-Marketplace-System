@@ -38,7 +38,12 @@ public class ServerNew
                 {
                     line = in.readUTF();
                     System.out.println(serverMethods.ReplyAll(line));
-                    
+                    if (line.equals("items")){
+                        serverMethods.dataBase.printItems();
+                    }
+                    if (line.equals("users")){
+
+                    }
 
 
                 }
