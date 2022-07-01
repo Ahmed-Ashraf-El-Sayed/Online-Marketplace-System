@@ -5,6 +5,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ServerMT {
+    static ArrayList<String> msgs;
+
     ServerMT() throws IOException, InterruptedException {
         ServerSocket server = new ServerSocket(22000);
         Socket clientSocket = server.accept();
@@ -15,7 +17,6 @@ public class ServerMT {
         clientSocket = server.accept();
         ClientHandler clientHandler2  = new ClientHandler(clientSocket);
         clientHandler2.start();
-        ArrayList<String> msgs;
 
         while(true){
             msgs = clientHandler1.getMessages();

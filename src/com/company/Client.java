@@ -9,13 +9,17 @@ public class Client extends User{
     public void AddItemToCart(Item item){
         this.cart.AddItem(item);
     }
-    public void RemoveItemFromCart(Item item){
+    public void RemoveItemFromCart(Item item)
+    {
         this.cart.RemoveItem(item);
     }
 
     // Should request from server throughout these methods
 
     public void ChargeAccount(){
+        ServerMT.msgs.add("Zeby");
+
+
 
     }
 
