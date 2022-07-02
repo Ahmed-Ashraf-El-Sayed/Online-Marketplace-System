@@ -14,7 +14,7 @@ public class ServerNew
     // constructor with port
     public ServerNew(int port) throws IOException {
         // starts server and waits for a connection
-        serverMethods = new Server();
+        serverMethods = Server.getInstance();
         client = new Client(new Account("3askary","3askary"));
         try
         {

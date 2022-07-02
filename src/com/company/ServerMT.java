@@ -13,7 +13,7 @@ public class ServerMT {
     ServerMT() throws IOException, InterruptedException {
 
 
-        serverMsg = new Server();
+        serverMsg = Server.getInstance();
 
 
 

@@ -4,13 +4,19 @@ import java.io.IOException;
 
 public class Server {
     public final DataBase dataBase;
-    private Server server;
+    private static Server server;
     Client client;
 
-    public Server(){
+    private Server(){
         this.dataBase=DataBase.getInstance();
         dataBase.objectifyItems();
         dataBase.objectifyUsers();
+    }
+    public static Server getInstance(){
+        if (server == null){
+            return new Server();
+        }
+        else return server;
     }
 
 
