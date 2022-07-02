@@ -12,6 +12,8 @@ public class ServerMT {
     ArrayList<String> info = new ArrayList<>();
     Client client;
     int login =0;
+    int charge=0;
+    double cash=0;
 
     private Server serverMsg;
 
@@ -43,6 +45,23 @@ public class ServerMT {
                         msgs.clear();
                         continue;
                     }
+                    if((msgs.get(msgs.size()-1).equals("Charge"))){
+                        System.out.println("Enter the amount you would like your account to be charged with.");
+                        charge=1;
+                        msgs.clear();
+                        continue;
+                    }
+                    if(charge == 1){
+                        for(int i =0 ; i<msgs.size() ; i++){
+                            cash = Double.parseDouble((msgs.get(i)));
+                            //System.out.println(info);
+                            charge=0;
+                            //Set client account cash to desired amount
+                            msgs.clear();
+                            continue;
+                        }
+                    }
+
                     if(login == 1){
                         for(int i =0 ; i<msgs.size() ; i++){
                             info.add(msgs.get(i));
@@ -60,6 +79,7 @@ public class ServerMT {
                     if(msgs.equals("Enter your login info")){
 
                     }
+
                     msgs.clear();
                 }
 
