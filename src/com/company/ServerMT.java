@@ -52,8 +52,6 @@ public class ServerMT {
                             msgs.clear();
                             continue;
                         }
-
-
                     }
                     for(int i =0 ; i<msgs.size() ; i++){
                         System.out.println("Request from client #1 stating: " + msgs);
@@ -82,7 +80,13 @@ public class ServerMT {
     }
     public void Reply(String s){
         if ("pay".equals(s)) {
-            System.out.println("Edfa3ly flos");
+            if (client.getAccount().getCash() >= client.getCart().getTotalPrice()){
+                System.out.println("Tm el daf3");
+                client.getAccount().setCash(client.getAccount().getCash()-client.getCart().getTotalPrice());
+            }
+            else {
+                System.out.println("m3aksh flos ya ebn el mtnaka");
+            }
         }
         else if (s.equals("charge")){
             System.out.println("esh7nly");

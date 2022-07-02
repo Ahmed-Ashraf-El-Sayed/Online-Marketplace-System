@@ -75,7 +75,7 @@ public class Account {
     }
 
     public double getCash() {
-        try {
+        /*try {
             // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
             Statement statement = connection.createStatement();
@@ -87,12 +87,13 @@ public class Account {
         catch (Exception e){
             e.printStackTrace();
         }
-        return 0;
+        return 0;*/
+        return cash;
     }
 
     public void setCash(double cash) {
         //this.cash = cash;
-        String update = "update person set balance = "+cash+" where username = "+this.username;
+        /*String update = "update person set balance = "+cash+" where username = "+this.username;
         try {
             // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
@@ -100,7 +101,8 @@ public class Account {
             statement.executeUpdate(update);
         }catch (Exception e){
             e.printStackTrace();
-        }
+        }*/
+        cash = this.cash;
 
     }
 
