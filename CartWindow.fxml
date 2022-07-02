@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CartController">
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView layoutX="129.0" layoutY="87.0" prefHeight="200.0" prefWidth="200.0" />
+            <Button layoutX="329.0" layoutY="480.0" mnemonicParsing="false" onMouseClicked="#proceed" text="Proceed" />
+            <ListView layoutX="400.0" layoutY="87.0" prefHeight="200.0" prefWidth="200.0" />
+            <Button layoutX="567.0" layoutY="480.0" mnemonicParsing="false" onMouseClicked="#deleteItems" text="remove items" />
+            <Label layoutX="196.0" layoutY="48.0" text="Orded Items" />
+            <Label layoutX="487.0" layoutY="48.0" text="Price" />
+            <Label layoutX="732.0" layoutY="48.0" text="Quantity" />
+            <Label layoutX="388.0" layoutY="362.0" text="Total Price:" />
+            <Label layoutX="569.0" layoutY="358.0" prefHeight="26.0" prefWidth="61.0" />
+            <ListView layoutX="655.0" layoutY="87.0" prefHeight="200.0" prefWidth="200.0" />
+            <Button layoutX="387.0" layoutY="399.0" mnemonicParsing="false" onMouseClicked="#proceed" text="calculate the price" />
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>
-
