@@ -75,7 +75,10 @@ public class DataBase {
             );
         }
     }
-
+    public void AddUser(User user){
+        this.users.add(user);
+        //Should be updated in database
+    }
 
 //fetch items from database into arraylist
 
@@ -111,5 +114,16 @@ public class DataBase {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public boolean SignIn(User user){
+        for(User x : users){
+            if (x.getAccount().getUsername().equals(user.getAccount().getUsername())){
+                if (x.getAccount().getPassword().equals(user.getAccount().getPassword())){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

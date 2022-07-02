@@ -28,7 +28,7 @@ public class Account {
     public boolean VerifyAccount(){
         try {
             // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "abdo1234");
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select username , password from person where username = '"+ this.getUsername() +"' and password = '"+this.getPassword()+"';");
             if(resultSet.next()){
@@ -55,7 +55,7 @@ public class Account {
         String update = "update person set username = '"+username+"' where username = '"+this.username+"'";
         try {
             // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "abdo1234");
             Statement statement = connection.createStatement();
             statement.executeUpdate(update);
         }catch (Exception e){
@@ -74,7 +74,7 @@ public class Account {
         String update = "update person set password = '"+password+"' where password = '"+this.password+"'";
         try {
             // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "abdo1234");
             Statement statement = connection.createStatement();
             statement.executeUpdate(update);
         }catch (Exception e){
@@ -85,7 +85,7 @@ public class Account {
     public double getCash() {
         try {
             // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "abdo1234");
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select balance from person where username = '"+ this.getUsername()+"'");
             if (resultSet.next()){
@@ -103,7 +103,7 @@ public class Account {
         String update = "update person set balance = "+cash+" where username = "+this.username;
         try {
             // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "abdo1234");
             Statement statement = connection.createStatement();
             statement.executeUpdate(update);
         }catch (Exception e){

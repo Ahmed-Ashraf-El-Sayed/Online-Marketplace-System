@@ -14,7 +14,7 @@ public class Server {
     }
 
 
-    public void ReplyUsernameChange(User user,String username){
+    /*public void ReplyUsernameChange(User user,String username){
         if(user.getAccount().VerifyAccount()){
             user.getAccount().setUsername(username);
             // to be updated in database
@@ -33,6 +33,8 @@ public class Server {
             System.out.println("Incorrect");
         }
     }
+    */
+
 
     public void ReplySignUp(User user){
         //dataBase.SignUp(user);

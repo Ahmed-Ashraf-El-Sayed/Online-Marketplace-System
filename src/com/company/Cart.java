@@ -47,6 +47,7 @@ public class Cart {
             e.printStackTrace();
         }
          */
+        this.totalPrice = totalPrice;
     }
 
     public void AddItem(Item item) {
