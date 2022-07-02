@@ -66,6 +66,15 @@ public class DataBase {
             );
         }
     }
+    public void printItems(){
+        int i=1;
+        for (Item item : items){
+            System.out.println(
+                    "Item " + (i++) +"    name: "+ item.getName() +
+                            "   Price: "+item.getPrice()
+            );
+        }
+    }
 
 
 //fetch items from database into arraylist
@@ -74,7 +83,7 @@ public class DataBase {
         try {
             String query = "select Item_name,Price,Quantitiy,Weight from Item ";
             // url is jdbc:mysql://localhost:3306/{database name}   user is the user of the database on the machine password should be the same as well
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "abdo1234");
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
@@ -91,11 +100,11 @@ public class DataBase {
     public void objectifyUsers(){
         try {
             String query = "select customer_username,customer_password from customer ";
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "Root_password");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketplace", "root", "abdo1234");
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
-                Account account = new Account(rs.getString("username"),rs.getString("password"));
+                Account account = new Account(rs.getString("customer_username"),rs.getString("customer_password"));
                 User user = new User(account);
                 users.add(user);
             }

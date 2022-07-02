@@ -10,6 +10,7 @@ public class ServerMT {
 
      ArrayList<String> msgs = new ArrayList<>();
     ArrayList<String> info = new ArrayList<>();
+    Client client;
     int login =0;
 
     private Server serverMsg;
@@ -38,6 +39,7 @@ public class ServerMT {
                     if((msgs.get(msgs.size()-1).equals("Sign in"))){
                         System.out.println("Enter your login info");
                         login = 1;
+
                         msgs.clear();
                         continue;
                     }
@@ -46,6 +48,7 @@ public class ServerMT {
                             info.add(msgs.get(i));
                             //System.out.println(info);
                             login=0;
+                            client = new Client(new Account(info.get(0),"ay 7aga"));
                             msgs.clear();
                             continue;
                         }
@@ -84,8 +87,12 @@ public class ServerMT {
         else if (s.equals("charge")){
             System.out.println("esh7nly");
         }
-        else if (s.equals("sign in")){
-            
+        else if (s.equals("items")){
+            serverMsg.dataBase.printItems();
+        }
+        else if (s.equals("one")){
+            client.getCart().AddItem(serverMsg.dataBase.getItems().get(0));
+            System.out.println("total price: "+ client.getCart().getTotalPrice());
         }
     }
 

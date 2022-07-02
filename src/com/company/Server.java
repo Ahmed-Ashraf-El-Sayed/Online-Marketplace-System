@@ -3,13 +3,13 @@ package com.company;
 import java.io.IOException;
 
 public class Server {
-    //private final DataBase dataBase;
+    public DataBase dataBase;
     private Server server;
 
     public Server(){
-        /*this.dataBase=DataBase.getInstance();
+        this.dataBase=DataBase.getInstance();
         dataBase.objectifyItems();
-        dataBase.objectifyUsers();*/
+        dataBase.objectifyUsers();
     }
 
 

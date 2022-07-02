@@ -21,7 +21,14 @@ public class Client extends User{
         this.cart.RemoveItem(item);
     }
 
-    // Should request from server throughout these methods
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+// Should request from server throughout these methods
 
     public void ChargeAccount(){
 
