@@ -21,6 +21,15 @@ public class ServerMT {
 
 
         serverMsg = new Server();
+        System.out.println(
+                "Bos ya sa7bi 3andak t3rf tktb:" +
+                        "\n 1-Sign in" +
+                        "\n 2-Charge" +
+                        "\n 3-Ektb esm el item"+
+                        "\n 4-Charge" +
+                        "\n 5-pay" +
+                        "\n Etfadal ysa7bi"
+        );
         ServerSocket server = new ServerSocket(22000);
         Socket clientSocket = server.accept();
         ClientHandler clientHandler1 = new ClientHandler(clientSocket);
@@ -54,9 +63,11 @@ public class ServerMT {
                     if(charge == 1){
                         for(int i =0 ; i<msgs.size() ; i++){
                             cash = Double.parseDouble((msgs.get(i)));
-                            //System.out.println(info);
+                            System.out.println(cash);
                             charge=0;
+                            client.getAccount().setCash(client.getAccount().getCash()+cash);
                             //Set client account cash to desired amount
+                            System.out.println("Flosak dlw2ty: "+ client.getAccount().getCash());
                             msgs.clear();
                             continue;
                         }
@@ -117,6 +128,17 @@ public class ServerMT {
         else if (s.equals("one")){
             client.getCart().AddItem(serverMsg.dataBase.getItems().get(0));
             System.out.println("total price: "+ client.getCart().getTotalPrice());
+        }
+        else if (s.equals("Camera")){
+            int c = 0;
+            for (Item i : serverMsg.dataBase.getItems()){
+                c++;
+                if (Objects.equals(i.getName(), "Camera")){
+                    System.out.println("Item no: "+ c);
+                    return;
+                }
+            }
+            System.out.println("M3ndnash");
         }
     }
 

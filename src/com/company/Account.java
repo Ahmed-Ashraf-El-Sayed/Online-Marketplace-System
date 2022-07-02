@@ -88,7 +88,7 @@ public class Account {
             e.printStackTrace();
         }
         return 0;*/
-        return cash;
+        return this.cash;
     }
 
     public void setCash(double cash) {
@@ -102,7 +102,7 @@ public class Account {
         }catch (Exception e){
             e.printStackTrace();
         }*/
-        cash = this.cash;
+        this.cash = cash;
 
     }
 
