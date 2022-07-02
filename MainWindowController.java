@@ -19,6 +19,9 @@ public class MainWindowController {
 		m.changeScene("Login.fxml");
 	}
 	
-
+	public void cart(ActionEvent e)throws IOException{
+		Main m = new Main();
+		m.changeScene("CartWindow.fxml");
+	}
  }
 

@@ -44,6 +44,7 @@ public class Main extends Application {
 		//GUIMethods gui = new GUIMethods();
 		//gui.SignUp();
 		launch(args);
+		Server server =Server.getInstance();
 		
 		
 	}
